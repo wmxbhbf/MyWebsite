@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <title>春笙の主页</title>
+    <meta name="keywords" content="春笙,ChunShengA,主页,Homepage">
+    <link rel="stylesheet" href="CSS/Code.css" type="text/css" />
+    <link rel="stylesheet" href="CSS/zhuye.css" type="text/css" />
+</head>
+
+<body>
+
+    <audio id="touchstart" controls="controls" autoplay="autoplay" loop="loop" style="display:none;">
+        <source src="music/买辣椒也用券 - 起风了.mp3" type="audio/mp3">
+    </audio>
+    <div id="Box">
+        <div class="MyBox">
+            <div class="headphoto"></div>
+            <div class="MyBox-title">
+                <h2>春笙</h2>
+                <div class="fg"></div>
+            </div>
+            <div class="MyBox-text">
+                <p>喜欢数码产品</p>
+                <p>📱💻🎧🖱️</p>
+                <p>喜欢刷机</p>
+                <p>性别：男</p>
+                <p>年龄：<span id="ageSpan"></span><br/></p>
+                <p>地址:河南 &nbsp;中国</p>
+                <p>还是学生，</p>
+                <p>但其实啥也不会。</p>
+            </div>
+        </div>
+        <div id="cmdBox">
+            <div class="cmd cmd2">
+                <div class="click">
+                    <div class="red"></div>
+                    <div class="yellow"></div>
+                    <div class="green"></div>
+                </div>
+                <div class="title">
+                    <span>ChunShengA - hbf</span>
+                </div>
+                <div class="cmdText">
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./Link.sh</span>
+                    <ul class="ul">
+                        <li><a href="http://www.coolapk.com/u/1913200" target="_blank">coolapk</a></li>
+                        <li><a href="https://github.com/wmxbhbf" target="_blank">GitHub</a></li>
+                        <li><a href="html/zahuopu.html">杂货铺</a></li>
+                        <li><a href="html/shiguangsuidao.html" target="_blank">时光隧道</a></li>
+                    </ul>
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./Hitokoto.sh</span>
+                    <p id="hitokoto">一言获取中🤣...</p>
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./Weather.sh</span>
+                    <iframe scrolling="no" src="https://tianqiapi.com/api.php?style=tu&skin=pitaya" frameborder="0" width="350" height="18" allowtransparency="true"></iframe>
+                    <br />
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./Date.sh</span>
+                    <br />
+                    <span id="nowDateTimeSpan"></span>
+                    <br />
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                    <span style="color: rgb(39, 39, 39);">./API.sh</span>
+                    <p><a href="https://hitokoto.cn/">一言API</a>丨<a href="https://tianqiapi.com/">天气API</a></p>
+                    <span style="color: rgb(0, 190, 0);">ChunShengA</span>
+                    <span style="color: blue;">~</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=41160202000387" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+            <img src="images/备案图标.png" style="float:left;" />
+            <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; ">豫公网安备 41160202000387号</p>
+        </a>
+        <a href="https://beian.miit.gov.cn" target="_blank">
+            <p>Copyrights © 2021 - 豫ICP备2021027670号</p>
+        </a>
+    </div>
+
+    <script>
+        fetch("https://v1.hitokoto.cn")
+            .then(response => response.json())
+            .then(data => {
+                const hitokoto = document.getElementById("hitokoto")
+                hitokoto.innerText = data.hitokoto + "—" + "「" + data.from + "」"
+            })
+            .catch(console.error)
+    </script>
+    <script language="JavaScript">
+        function startTime() {
+            var today = new Date();
+            var yyyy = today.getFullYear();
+            var MM = today.getMonth() + 1;
+            var dd = today.getDate();
+            var hh = today.getHours();
+            var mm = today.getMinutes();
+            var ss = today.getSeconds();
+            MM = checkTime(MM);
+            dd = checkTime(dd);
+            mm = checkTime(mm);
+            ss = checkTime(ss);
+            var day;
+            if (today.getDay() == 0) day = "星期日"
+            if (today.getDay() == 1) day = "星期一"
+            if (today.getDay() == 2) day = "星期二"
+            if (today.getDay() == 3) day = "星期三"
+            if (today.getDay() == 4) day = "星期四"
+            if (today.getDay() == 5) day = "星期五"
+            if (today.getDay() == 6) day = "星期六"
+            document.getElementById('nowDateTimeSpan').innerHTML = yyyy + "年" + MM + "月" + dd + "日 " + hh + ":" + mm + ":" + ss + "   " + day;
+            document.getElementById('ageSpan').innerHTML = yyyy - 1999;
+            setTimeout('startTime()', 1000);
+        }
+        window.setInterval(startTime, 100);
+
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+    <!-- <script>
+        window.addEventListener("myaudio",
+            function() {
+                audio.play();
+            })
+    </script> -->
+    <script>
+        function toggleSound() {
+            var music = document.getElementById("touchstart");
+            if (music.paused) {
+                music.paused = false;
+                music.play();
+            }
+        }
+        setInterval("toggleSound()", 1);
+    </script>
+</body>
+
+</html>

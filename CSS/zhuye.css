@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: url("../images/bg002.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#Box {
+    width: 1200px;
+    height: 620px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(88, 88, 88);
+}
+
+a:hover {
+    color: #3498db;
+}
+
+.MyBox {
+    background-color: rgb(108, 210, 250, 0.2);
+    width: 21rem;
+    height: 27rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    margin-top: 10%;
+    float: left;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.MyBox:hover {
+    background-color: skyblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+.headphoto {
+    background-image: url("../images/tx001.png");
+    background-size: cover;
+    width: 8rem;
+    height: 8rem;
+    box-shadow: 0 0 10px rgba(00, 0, 0, 0.15);
+    border-radius: 50%;
+    position: relative;
+    top: -15%;
+    left: 50%;
+    margin-left: -4rem;
+    transition: all 0.35s;
+}
+
+.MyBox:hover .headphoto {
+    transform: rotate(360deg);
+    transition: all 0.5s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.MyBox-title p {
+    font-size: 1.2rem;
+    border-right: 0.125rem solid;
+    width: 7.3ch;
+    white-space: nowrap;
+    animation: typing 1.5s steps(20, end), blink-caret 0.6s step-end infinite alternate;
+    margin: 0 auto;
+    margin-top: -8px;
+    transition: all 0.3s;
+}
+
+.MyBox:hover .MyBox-title p {
+    margin-top: -8.6px;
+    font-size: 1.25rem;
+}
+
+.MyBox-title .fg {
+    width: 80%;
+    height: 2.5px;
+    background-image: linear-gradient(to left, #3498db, #2980b9);
+    margin: 25px 0 0 10%;
+}
+
+.MyBox-text {
+    width: 80%;
+    height: 192px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1rem;
+    color: rgb(88, 88, 88);
+    animation-name: MyBox-text;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    margin: 20px 0 0 10%;
+    transition: all 0.3s;
+}
+
+.MyBox:hover .MyBox-text {
+    font-size: 1.02rem;
+}
+
+@keyframes MyBox-text {
+    0% {
+        transform: translateY(50px);
+        color: skyblue;
+    }
+    100% {
+        transform: translateY(0);
+        color: rgb(88, 88, 88);
+    }
+}
+
+#cmdBox {
+    width: 680px;
+    float: right;
+    margin-top: 35%;
+}
+
+.cmd {
+    width: 550px;
+    height: 360px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgb(108, 210, 250, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+    font-size: 14px;
+    color: rgb(88, 88, 88);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.cmd:hover {
+    width: 560px;
+    height: 370px;
+    background-color: lightskyblue;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+    margin: -10px 0 0 -10px;
+    z-index: 1;
+}
+
+.cmd .title {
+    width: 100%;
+    height: 20px;
+    margin-top: 20px;
+    padding-left: 29px;
+    padding-right: 29px;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.cmd .title span {
+    display: inline-block;
+    width: 70%;
+    text-align: center;
+}
+
+.cmd .click {
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 10px;
+    float: left;
+}
+
+.cmd .click div {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 15px 0 0 6px;
+    float: left;
+}
+
+.cmd .click .red {
+    background-color: #FD5A5B;
+    box-shadow: 0 0 1px #FD5A5B;
+}
+
+.cmd .click .red:hover {
+    background-color: #FD5A5B;
+    box-shadow: 0 0 5px #FD5A5B;
+}
+
+.cmd .click .yellow {
+    background-color: #FEB22C;
+    box-shadow: 0 0 1px #FEB22C;
+}
+
+.cmd .click .yellow:hover {
+    background-color: #FEB22C;
+    box-shadow: 0 0 5px #FEB22C;
+}
+
+.cmd .click .green {
+    background-color: #24CC2D;
+    box-shadow: 0 0 1px #24CC2D;
+}
+
+.cmd .click .green:hover {
+    background-color: #24CC2D;
+    box-shadow: 0 0 5px #24CC2D;
+}
+
+.cmdText {
+    padding-top: 40px;
+    padding-left: 35px;
+    padding-right: 29px;
+}
+
+.cmd2 {
+    position: relative;
+    top: -280px;
+    left: 130px;
+}
+
+.cmd2 .cmdText .ul {
+    margin-left: 15px;
+}
+
+.cmd2 .cmdText .ul a {
+    color: rgb(88, 88, 88);
+}
+
+.cmd2 .cmdText .ul a:hover {
+    color: #3498db;
+}
+
+#footer {
+    width: 100%;
+    color: white;
+    float: left;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 0.5em 0;
+    z-index: 11;
+    transition: all .1s ease-out;
+}
+
+#footer:hover {
+    background-color: rgb(255, 255, 255, 0.95);
+    color: rgb(88, 88, 88);
+}
+
+#header {
+    width: 99%;
+    color: white;
+    text-align: left;
+    padding: 0.5em 0.5em;
+}
+
+#header a {
+    width: 99%;
+    color: white;
+}
+
+@media screen and (max-height: 500px) and (min-width: 1280px) {
+    #footer {
+        background-color: rgb(255, 255, 255, 0.85);
+        color: rgb(88, 88, 88);
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    #box {
+        width: 100%;
+    }
+    .meBox {
+        width: 21rem;
+        float: none;
+        margin: 100px auto 100px;
+    }
+    .meBox:hover {
+        background-color: rgb(255, 255, 255, 0.95);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+    }
+    .meBox:hover .meBox-text {
+        font-size: 1.02rem;
+    }
+    .meBox:hover .meBox-title p {
+        font-size: 1.2rem;
+    }
+    #cmdBox {
+        float: none;
+        margin: 0 auto 100px;
+    }
+    .cmd:hover {
+        width: 550px;
+        height: 360px;
+        background-color: rgb(255, 255, 255, 0.95);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+        margin: 0;
+        z-index: 1;
+    }
+    #footer {
+        background-color: rgba(255, 255, 255, .7);
+        color: rgb(50, 50, 50);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .meBox {
+        width: 80%;
+    }
+    .meBox:hover .meBox-text {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    #cmdBox {
+        width: 100%;
+        margin-top: -80px;
+        height: 797px;
+        margin-right: 5%;
+    }
+    .cmd {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .cmd2 {
+        position: relative;
+        top: 20px;
+        left: 0;
+    }
+    .cmd:hover {
+        width: 80%;
+        height: 360px;
+        margin: 0 auto;
+        z-index: 1;
+    }
+    .cmd .title span {
+        display: -webkit-box;
+    }
+}
